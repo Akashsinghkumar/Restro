@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visit & Table Booking — Restro</title>
+  <meta name="description" content="Reserve a table at Restro, read customer reviews, and get live Google Maps directions." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <div class="nav-logo" onclick="window.location.href='index.html'">
+        <img src="assets/images/restro_logo.png" alt="Restro Logo" class="nav-logo-img" />
+        <span class="nav-logo-text">RESTRO</span>
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="menu.html" id="nav-menu">Menu Card</a></li>
+      <li><a href="menu.html#curries" id="nav-specialties">Specialties</a></li>
+      <li><a href="story.html" id="nav-story">Our Story</a></li>
+      <li><a href="visit.html" class="active" id="nav-visit">Visit & Book</a></li>
+    </ul>
+
+    <div class="nav-right-actions">
+      <!-- Dark Mode Switcher -->
+      <button class="theme-toggle-btn" aria-label="Toggle Dark Mode">🌙</button>
+
+      <a href="#reservation-form" class="btn-primary" style="padding:10px 22px; font-size:0.85rem;">Reserve Table →</a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE DRAWER ── -->
+  <div class="mobile-drawer-overlay" id="mobileOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-links">
+      <div style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--moss); font-weight:700; margin-bottom:12px;">Navigation</div>
+      <a href="index.html">Home <span>→</span></a>
+      <a href="menu.html">Full Menu Card <span>→</span></a>
+      <a href="story.html">Our Story <span>→</span></a>
+      <a href="visit.html">Visit & Reservations <span>→</span></a>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <a href="https://wa.me/919876543210?text=Hello%20Restro%2C%20I%20want%20to%20order" target="_blank" class="btn-whatsapp" style="width:100%; text-decoration:none;">
+        💬 WhatsApp Order
+      </a>
+      <a href="#reservation-form" class="btn-primary" style="width:100%;">Book a Table ✦</a>
+      <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:8px;">100% Pure Vegetarian Dining</p>
+    </div>
+  </div>
+
+  <!-- ── VISIT & RESERVATION SECTION ── -->
+  <section class="hero" id="visit-page-hero" style="min-height: auto; padding: 110px 48px 60px;">
+    <div class="hero-image-col" style="height: auto;">
+      <img src="assets/images/restaurant_interior.png" alt="Restro Dining Hall" class="hero-main-img" style="height: 460px;" />
+    </div>
+
+    <div class="hero-content" style="padding: 20px 40px;">
+      <div style="background: var(--bg-card); padding: 36px 32px; border-radius: var(--radius-xl); box-shadow: var(--shadow-md); border: 1px solid var(--border-card);" id="reservation-form">
+        <div style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--moss); font-weight:700; margin-bottom:6px;">✦ Online Reservation ✦</div>
+        <h2 style="font-size:1.8rem; color:var(--text-heading); margin-bottom:12px;">Reserve Your Table</h2>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:24px;">Book a cozy dining table for family, couples, or group gatherings. Instant confirmation via SMS/WhatsApp.</p>
+
+        <form id="reservationForm">
+          <div class="customer-form-grid" style="grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:12px;">
+            <div>
+              <label style="font-size:0.75rem; font-weight:700; color:var(--text-heading); display:block; margin-bottom:4px;">Full Name</label>
+              <input type="text" id="res-name" class="search-input" style="padding:10px 14px; font-size:0.85rem;" placeholder="Your Name" required />
+            </div>
+            <div>
+              <label style="font-size:0.75rem; font-weight:700; color:var(--text-heading); display:block; margin-bottom:4px;">Mobile Number</label>
+              <input type="tel" id="res-phone" class="search-input" style="padding:10px 14px; font-size:0.85rem;" placeholder="10-digit number" required />
+            </div>
+          </div>
+
+          <div class="customer-form-grid" style="grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:18px;">
+            <div>
+              <label style="font-size:0.75rem; font-weight:700; color:var(--text-heading); display:block; margin-bottom:4px;">Select Date</label>
+              <input type="date" id="res-date" class="search-input" style="padding:10px 14px; font-size:0.85rem;" required />
+            </div>
+            <div>
+              <label style="font-size:0.75rem; font-weight:700; color:var(--text-heading); display:block; margin-bottom:4px;">Number of Guests</label>
+              <select id="res-guests" class="search-input" style="padding:10px 14px; font-size:0.85rem;">
+                <option value="2 Guests">2 Guests (Couple Table)</option>
+                <option value="4 Guests" selected>4 Guests (Family Table)</option>
+                <option value="6 Guests">6 Guests (Group Dining)</option>
+                <option value="8+ Guests">8+ Guests (Celebration Table)</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="margin-bottom:20px;">
+            <label style="font-size:0.75rem; font-weight:700; color:var(--text-heading); display:block; margin-bottom:4px;">Preferred Time Slot</label>
+            <select id="res-time" class="search-input" style="padding:10px 14px; font-size:0.85rem;">
+              <option value="12:30 PM">Lunch Slot: 12:30 PM</option>
+              <option value="2:00 PM">Lunch Slot: 2:00 PM</option>
+              <option value="7:30 PM" selected>Dinner Slot: 7:30 PM</option>
+              <option value="9:00 PM">Dinner Slot: 9:00 PM</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-primary" style="width: 100%; padding: 14px;">Confirm Table Reservation ✦</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DINING EXPERIENCE SECTION ── -->
+  <section class="section" id="dining-experience" style="padding-top:40px; padding-bottom:40px;">
+    <div style="max-width:1300px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:32px;">
+        <div class="label-sm">✦ Curated Dining Ambiance ✦</div>
+        <h2 class="section-title" style="margin-top:6px;">Our Special Dining Experiences</h2>
+        <p class="section-subtitle">Whether it's a romantic dinner date, festive family gathering, or private celebration, we craft the perfect setting for your memories.</p>
+      </div>
+
+      <div class="dining-exp-grid fade-up">
+        <!-- 1. Fine Dining -->
+        <div class="dining-exp-card">
+          <div class="exp-icon-wrap">🍷</div>
+          <h3>Royal Fine Dining</h3>
+          <p>Plush leather booth seating, dim gold ambient lighting, and multi-course pure vegetarian thalis served with royal warmth.</p>
+          <span class="exp-tag">Luxury & Comfort</span>
+        </div>
+
+        <!-- 2. Family Dining -->
+        <div class="dining-exp-card">
+          <div class="exp-icon-wrap">👨‍👩‍👧‍👦</div>
+          <h3>Family Feasts</h3>
+          <p>Spacious 4 to 8-seater dining tables designed for joyous family conversations, kids-favorite treats, and shared curries.</p>
+          <span class="exp-tag">Family Friendly</span>
+        </div>
+
+        <!-- 3. Romantic Dining -->
+        <div class="dining-exp-card">
+          <div class="exp-icon-wrap">🕯️</div>
+          <h3>Candlelight Romantic Setup</h3>
+          <p>Intimate private corner tables adorned with fresh rose petal arrangements, scented candles, and complimentary mocktail sips.</p>
+          <span class="exp-tag">Couples & Dates</span>
+        </div>
+
+        <!-- 4. Chef's Tasting -->
+        <div class="dining-exp-card">
+          <div class="exp-icon-wrap">👨‍🍳</div>
+          <h3>Chef's Special Tasting</h3>
+          <p>An exclusive 5-course degustation menu personally crafted and presented by Executive Chef featuring seasonal specialties.</p>
+          <span class="exp-tag">Culinary Masterpiece</span>
+        </div>
+
+        <!-- 5. Live Music -->
+        <div class="dining-exp-card">
+          <div class="exp-icon-wrap">🎵</div>
+          <h3>Acoustic Live Music</h3>
+          <p>Immerse yourself in soulful acoustic guitar and flute melodies performed live every Friday & Weekend evening.</p>
+          <span class="exp-tag">Fri & Weekend Evenings</span>
+        </div>
+
+        <!-- 6. Outdoor Dining -->
+        <div class="dining-exp-card">
+          <div class="exp-icon-wrap">🌿</div>
+          <h3>Outdoor Garden & Terrace</h3>
+          <p>Breathe in fresh open-air dining surrounded by lush botanical flora on our ground patio or starry rooftop terrace.</p>
+          <span class="exp-tag">Open Air & Rooftop</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ── GUEST REVIEWS SECTION ── -->
+  <section class="section" id="guest-reviews" style="max-width:1300px; margin:0 auto; padding-top:20px; padding-bottom:60px;">
+    <div style="text-align:center; margin-bottom:28px;">
+      <div class="label-sm">✦ Customer Voice ✦</div>
+      <h2 class="section-title" style="margin-top:6px;">Loved by Thousands of Diners</h2>
+      <p class="section-subtitle">Read genuine experiences shared by our valued guests on Google & Social Media.</p>
+    </div>
+
+    <!-- Google Rating Highlight Banner -->
+    <div class="google-rating-banner fade-up">
+      <div class="rating-info-left">
+        <div class="google-g-logo">🌐</div>
+        <div>
+          <div class="rating-stars">★★★★★ 4.9 / 5.0</div>
+          <div style="font-size:0.9rem; opacity:0.9; font-weight:600;">Verified Google Rating based on 1,480+ Reviews</div>
+        </div>
+      </div>
+      <a href="https://maps.google.com" target="_blank" class="btn-primary" style="padding:10px 22px; font-size:0.85rem; background:var(--gold); color:#121c0e; text-decoration:none;">
+        ⭐ Read 1,480+ Google Reviews →
+      </a>
+    </div>
+
+    <!-- Reviews Cards Grid -->
+    <div class="reviews-grid fade-up">
+      <div class="review-card">
+        <div>
+          <div class="reviewer-profile">
+            <div class="reviewer-avatar">RS</div>
+            <div>
+              <strong style="color:var(--text-heading); font-size:0.92rem; display:block;">Rahul & Sneha S.</strong>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Family Dinner • 2 days ago</span>
+            </div>
+          </div>
+          <div style="color:var(--gold); font-size:0.9rem; margin-bottom:8px;">★★★★★</div>
+          <p class="review-text">"The candlelight dinner setup was magical! Paneer Butter Masala and Butter Naan were melted-in-mouth perfection. Staff is polite & courteous!"</p>
+        </div>
+        <div style="font-size:0.75rem; color:var(--moss); font-weight:700;">Verified Google Diner ✔</div>
+      </div>
+
+      <div class="review-card">
+        <div>
+          <div class="reviewer-profile">
+            <div class="reviewer-avatar" style="background:#4A6B32;">AS</div>
+            <div>
+              <strong style="color:var(--text-heading); font-size:0.92rem; display:block;">Dr. Ananya Sharma</strong>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Weekend Live Music • 1 week ago</span>
+            </div>
+          </div>
+          <div style="color:var(--gold); font-size:0.9rem; margin-bottom:8px;">★★★★★</div>
+          <p class="review-text">"Best 100% pure veg restaurant! Cleanliness, live acoustic music, and authentic South Indian Dosa made our Sunday evening so special."</p>
+        </div>
+        <div style="font-size:0.75rem; color:var(--moss); font-weight:700;">Verified Google Diner ✔</div>
+      </div>
+
+      <div class="review-card">
+        <div>
+          <div class="reviewer-profile">
+            <div class="reviewer-avatar" style="background:#BC7125;">VV</div>
+            <div>
+              <strong style="color:var(--text-heading); font-size:0.92rem; display:block;">Vikramaditya Verma</strong>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Maharaja Feast • 2 weeks ago</span>
+            </div>
+          </div>
+          <div style="color:var(--gold); font-size:0.9rem; margin-bottom:8px;">★★★★★</div>
+          <p class="review-text">"Valet parking was smooth and hassle-free. The Maharaja Thali is a culinary masterpiece. Unlimited pure ghee sweets! 10/10 recommended."</p>
+        </div>
+        <div style="font-size:0.75rem; color:var(--moss); font-weight:700;">Verified Google Diner ✔</div>
+      </div>
+
+      <div class="review-card">
+        <div>
+          <div class="reviewer-profile">
+            <div class="reviewer-avatar" style="background:#2C3E20;">PD</div>
+            <div>
+              <strong style="color:var(--text-heading); font-size:0.92rem; display:block;">Priya Deshmukh</strong>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Birthday Party • 3 weeks ago</span>
+            </div>
+          </div>
+          <div style="color:var(--gold); font-size:0.9rem; margin-bottom:8px;">★★★★★</div>
+          <p class="review-text">"Brought 20 guests for my mom's 50th birthday. Table decoration was free and the customized spice options for curries won everyone's heart!"</p>
+        </div>
+        <div style="font-size:0.75rem; color:var(--moss); font-weight:700;">Verified Google Diner ✔</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FREQUENTLY ASKED QUESTIONS (FAQ) ── -->
+  <section class="section" id="faq-section" style="max-width:1300px; margin:0 auto; padding-top:0; padding-bottom:60px;">
+    <div style="text-align:center; margin-bottom:32px;">
+      <div class="label-sm">✦ Help & Clarity ✦</div>
+      <h2 class="section-title" style="margin-top:6px;">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Got questions before visiting? Here are the answers to our most common dining queries.</p>
+    </div>
+
+    <div class="faq-container fade-up">
+      <!-- Q1 -->
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>❓ Do I need a table reservation in advance?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Walk-ins are always warmly welcomed! However, for Friday to Sunday dinner hours and festival holidays, we strongly recommend reserving a table in advance using our online form or calling us to avoid wait times.
+        </div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>❓ How many guests can I book a table for?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          You can reserve tables for 1 guest up to 20 guests directly online. For large group gatherings or private dining celebrations, please contact our restaurant manager via WhatsApp or Call.
+        </div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>❓ Is parking facility available at the restaurant?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! We offer complimentary 100% free valet parking service for all our dining guests right at the restaurant main entrance, along with a spacious reserved parking lot.
+        </div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>❓ Do you offer Private Dining Rooms (PDR)?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes, we have 2 sound-proof, air-conditioned Private Dining Rooms (PDR) suitable for 8 to 16 guests, perfect for confidential business meetings, anniversary dates, and family celebrations.
+        </div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>❓ Can I bring a birthday or anniversary cake from outside?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! You are most welcome to bring your celebration cake. Our team will gladly store it in cold refrigeration, arrange standard sparkler candles, and assist with cake service with no extra charge.
+        </div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>❓ Is outdoor or rooftop garden seating available?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          Yes! We feature a lush green Outdoor Garden Patio on the ground level as well as a romantic Rooftop Terrace dining area under starry skies (weather permitting).
+        </div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="faq-item">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <span>❓ What is the table booking cancellation policy?</span>
+          <span class="faq-toggle-icon">+</span>
+        </div>
+        <div class="faq-answer">
+          We understand plans change! Table reservations can be rescheduled or cancelled free of charge up to 1 hour prior to your reserved time slot by calling us or replying to your WhatsApp confirmation.
+        </div>
+      </div>
+    </div>
+  <!-- ── LOCATION, LANDMARK & MAP NAVIGATION ── -->
+  <section class="section" id="location-landmark" style="max-width:1300px; margin:0 auto; padding-top:20px; padding-bottom:40px;">
+    <div style="text-align:center; margin-bottom:28px;">
+      <div class="label-sm">✦ Navigation & Address ✦</div>
+      <h2 class="section-title" style="margin-top:6px;">Location & How to Reach Us</h2>
+      <p class="section-subtitle">Located in the heart of the city with easy metro connectivity & free valet parking.</p>
+    </div>
+
+    <!-- Landmark & Details Card -->
+    <div class="location-info-card fade-up">
+      <div class="loc-item">
+        <div class="loc-icon">📍</div>
+        <div>
+          <h4>Restaurant Address</h4>
+          <p>Restro Restaurant, Plot 42, Heritage Boulevard, Opp. Town Hall, City Center.</p>
+        </div>
+      </div>
+
+      <div class="loc-item">
+        <div class="loc-icon">🚇</div>
+        <div>
+          <h4>Nearby Landmark</h4>
+          <p>100m from Central Metro Station (Gate No. 2). Next to Town Hall Plaza.</p>
+        </div>
+      </div>
+
+      <div class="loc-item">
+        <div class="loc-icon">🚗</div>
+        <div>
+          <h4>Parking & Arrival</h4>
+          <p>Complimentary 100% Free Valet Parking at entrance with dedicated driver assistance.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Map Embed -->
+    <div class="map-embed-wrapper fade-up" style="margin-bottom:20px;">
+      <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120638.11899144865!2d72.8258334!3d19.0821978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div style="text-align:center;">
+      <a href="https://maps.google.com" target="_blank" class="btn-secondary" style="padding:11px 28px;">🚗 Open Google Maps Navigation →</a>
+    </div>
+  </section>
+
+  <!-- ── QUICK CONTACT & DIRECT ACTIONS BANNER ── -->
+  <section class="section" id="quick-contact" style="max-width:1300px; margin:0 auto; padding-top:0; padding-bottom:50px;">
+    <div class="quick-contact-banner fade-up">
+      <div style="text-align:center;">
+        <div style="font-size:0.78rem; font-weight:800; letter-spacing:0.15em; text-transform:uppercase; color:var(--gold); margin-bottom:6px;">✦ DIRECT ASSISTANCE ✦</div>
+        <h2 style="font-size:2rem; margin-bottom:8px; color:#FFFFFF;">Need Instant Help or Directions?</h2>
+        <p style="font-size:0.92rem; opacity:0.85; max-width:640px; margin:0 auto;">Connect with our reception team instantly via Phone, WhatsApp, or navigate to our restaurant using Google Maps.</p>
+      </div>
+
+      <div class="quick-actions-row">
+        <!-- 1. Call -->
+        <a href="tel:+919876543210" class="quick-act-btn btn-act-call">
+          📞 Call Restaurant
+        </a>
+
+        <!-- 2. WhatsApp -->
+        <a href="https://wa.me/919876543210?text=Hello%20Restro%2C%20I%20have%20a%20query%20about%20visiting." target="_blank" class="quick-act-btn btn-act-wa">
+          💬 WhatsApp Us
+        </a>
+
+        <!-- 3. Get Directions -->
+        <a href="https://maps.google.com" target="_blank" class="quick-act-btn btn-act-map">
+          📍 Get Directions
+        </a>
+
+        <!-- 4. Reserve Table -->
+        <a href="#reservation-form" class="quick-act-btn btn-act-reserve">
+          📅 Reserve a Table
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="footer">
+    <!-- VIP Newsletter Banner -->
+    <div class="footer-vip-bar">
+      <div class="footer-vip-content">
+        <span class="footer-vip-badge">✦ RESTRO VIP CLUB ✦</span>
+        <h3>Get 10% OFF Your Next Feast & Secret Offers!</h3>
+        <p>Subscribe to receive seasonal special menus, festival discount coupons, and event updates.</p>
+      </div>
+      <form class="footer-vip-form" onsubmit="event.preventDefault(); if(this.email.value){ showToast('🎉 Thank you for subscribing to Restro VIP Club!'); this.reset(); }">
+        <input type="email" name="email" class="footer-vip-input" placeholder="Enter your email address..." required />
+        <button type="submit" class="btn-vip-subscribe">Subscribe ✨</button>
+      </form>
+    </div>
+
+    <div class="footer-grid">
+      <!-- Col 1: Brand & Identity -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/images/restro_logo.png" alt="Restro Logo" class="footer-logo-img" />
+          <span class="footer-logo-text">RESTRO</span>
+        </div>
+        <div class="footer-tagline">Authentic Flavors. Crafted for Joyful Moments.</div>
+        <p class="footer-bio">100% Pure vegetarian multi-cuisine dining destination. Paneer curries, dosas, pizzas, noodles & sweets made with pure ingredients.</p>
+        <div class="footer-trust-badges">
+          <span class="trust-badge">🌿 100% Pure Veg</span>
+          <span class="trust-badge">✨ FSSAI Certified</span>
+          <span class="trust-badge">⚡ Fast WhatsApp Order</span>
+        </div>
+        <div class="footer-social-icons">
+          <a href="#" class="social-icon-btn" title="WhatsApp Order" onclick="openCartModal(); return false;">💬</a>
+          <a href="tel:+919876543210" class="social-icon-btn" title="Call Hotline">📞</a>
+          <a href="mailto:contact@restro.com" class="social-icon-btn" title="Email Us">📧</a>
+          <a href="https://maps.google.com" target="_blank" class="social-icon-btn" title="Google Maps">📍</a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Explore</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html"><span>›</span> Home Page</a></li>
+          <li><a href="menu.html"><span>›</span> Full Menu Card (70+ Dishes)</a></li>
+          <li><a href="menu.html#curries"><span>›</span> Signature Paneer Specials</a></li>
+          <li><a href="story.html"><span>›</span> Our Culinary Journey</a></li>
+          <li><a href="visit.html#reservation-form"><span>›</span> Reserve Table Online</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Operating Hours & Live Status -->
+      <div class="footer-section">
+        <h4>Opening Hours</h4>
+        <div class="footer-status-pill">
+          <span class="status-dot-live"></span>
+          <span>Open Now &nbsp;•&nbsp; Dine-In & Delivery</span>
+        </div>
+        <div class="hours-card">
+          <div class="hours-row">
+            <span class="hours-day">Monday – Friday</span>
+            <span class="hours-time">7:00 AM – 11:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Saturday</span>
+            <span class="hours-time">7:00 AM – 11:30 PM</span>
+          </div>
+          <div class="hours-row highlight">
+            <span class="hours-day">Sunday & Holidays</span>
+            <span class="hours-time">7:00 AM – 11:30 PM</span>
+          </div>
+        </div>
+        <p class="hours-note">📍 Kitchen closes 30 mins before closing time.</p>
+      </div>
+
+      <!-- Col 4: Find & Contact Us -->
+      <div class="footer-section">
+        <h4>Find & Contact Us</h4>
+        <div class="contact-info-block">
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <strong>Restro Restaurant</strong>
+              <p>Main Road, City Center (Opp. Town Hall)</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div>
+              <strong>Order Hotline</strong>
+              <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <strong>Email Support</strong>
+              <p><a href="mailto:contact@restro.com">contact@restro.com</a></p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 14px;">
+          <a href="https://maps.google.com" target="_blank" class="btn-footer-maps">📍 Open in Google Maps →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <p>🌿 &copy; 2026 Restro. All rights reserved. 100% Pure Vegetarian Dining.</p>
+        <span class="fssai-tag">FSSAI Lic No. 10026099000142</span>
+      </div>
+      <div class="footer-bottom-right">
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Refund Policy</a>
+        </div>
+        <button type="button" class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top">
+          <span>Back to top</span> ↑
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

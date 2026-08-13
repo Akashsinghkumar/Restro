@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Story — Restro</title>
+  <meta name="description" content="The story of Restro — passionate vegetarian cuisine rooted in honest ingredients, time-honored cooking traditions, and soulful hospitality." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <div class="nav-logo" onclick="window.location.href='index.html'">
+        <img src="assets/images/restro_logo.png" alt="Restro Logo" class="nav-logo-img" />
+        <span class="nav-logo-text">RESTRO</span>
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html" id="nav-home">Home</a></li>
+      <li><a href="menu.html" id="nav-menu">Menu Card</a></li>
+      <li><a href="menu.html#curries" id="nav-specialties">Specialties</a></li>
+      <li><a href="story.html" class="active" id="nav-story">Our Story</a></li>
+      <li><a href="visit.html" id="nav-visit">Visit & Book</a></li>
+    </ul>
+
+    <div class="nav-right-actions">
+      <!-- Dark Mode Switcher -->
+      <button class="theme-toggle-btn" aria-label="Toggle Dark Mode">🌙</button>
+
+      <a href="visit.html#reservation-form" class="btn-primary" style="padding:10px 22px; font-size:0.85rem;">Reserve Table →</a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE DRAWER ── -->
+  <div class="mobile-drawer-overlay" id="mobileOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-links">
+      <div style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--moss); font-weight:700; margin-bottom:12px;">Navigation</div>
+      <a href="index.html">Home <span>→</span></a>
+      <a href="menu.html">Full Menu Card <span>→</span></a>
+      <a href="story.html">Our Story <span>→</span></a>
+      <a href="visit.html">Visit & Reservations <span>→</span></a>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <a href="https://wa.me/919876543210?text=Hello%20Restro%2C%20I%20want%20to%20order" target="_blank" class="btn-whatsapp" style="width:100%; text-decoration:none;">
+        💬 WhatsApp Order
+      </a>
+      <a href="visit.html#reservation-form" class="btn-primary" style="width:100%;">Book a Table ✦</a>
+      <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:8px;">100% Pure Vegetarian Dining</p>
+    </div>
+  </div>
+
+  <!-- ── PAGE HERO ── -->
+  <section class="hero" id="story-hero" style="min-height: auto; padding: 110px 48px 60px;">
+    <div class="hero-content">
+      <div class="hero-eyebrow" style="margin-bottom:20px;">
+        <div class="hero-eyebrow-line"></div>
+        <span class="label-sm">✦ Our Story & Values ✦</span>
+      </div>
+      <h1 class="hero-title" style="font-size: clamp(2.6rem, 5vw, 4.8rem);">Where Passion<br>Meets the<br><em style="font-style:italic; color:var(--gold);">Dining Table.</em> <span style="font-size:1.4rem;">🌿</span></h1>
+      <p class="hero-desc">
+        Restro was founded on a simple belief: pure vegetarian dining should be an unforgettable experience of rich aromas, vibrant spices, and heartwarming hospitality.
+      </p>
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary">Explore Our Food →</a>
+        <a href="https://wa.me/919876543210?text=Hello%20Restro%2C%20I%20want%20to%20place%20an%20order" target="_blank" class="btn-whatsapp" style="text-decoration:none;">💬 Instant Order</a>
+      </div>
+    </div>
+    <div class="hero-image-col">
+      <img src="assets/images/barista_chef.png" alt="Our Master Chef" class="hero-main-img" />
+    </div>
+  </section>
+
+  <!-- ── QUALITY PILLARS ── -->
+  <section id="quality" style="padding: 40px 48px 80px; max-width: 1400px; margin: 0 auto;">
+    <div style="text-align:center; margin-bottom: 36px;">
+      <div class="label-sm">✦ Uncompromising Standards ✦</div>
+      <h2 class="section-title" style="margin-top: 8px;">Our Quality Commitments</h2>
+    </div>
+    <div class="dish-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));">
+      <div class="dish-card fade-up">
+        <div class="dish-img-wrap" style="height:150px;">
+          <img src="assets/images/paneer_butter_masala.png" alt="Fresh Farm Paneer" class="dish-img" />
+        </div>
+        <div class="dish-body">
+          <h4 style="font-size:1.1rem; color:var(--text-heading); margin-bottom:6px;">Farm-Fresh Malai Paneer</h4>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.5;">Made daily with whole dairy milk, ensuring silky tenderness in every curry and sandwich.</p>
+        </div>
+      </div>
+
+      <div class="dish-card fade-up" style="transition-delay:0.1s">
+        <div class="dish-img-wrap" style="height:150px;">
+          <img src="assets/images/sourced_beans.png" alt="Aromatic Spices" class="dish-img" />
+        </div>
+        <div class="dish-body">
+          <h4 style="font-size:1.1rem; color:var(--text-heading); margin-bottom:6px;">Hand-Pounded Spices</h4>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.5;">Whole garam masala, roasted cumin, and cold-pressed mustard oil for authentic desi flavor.</p>
+        </div>
+      </div>
+
+      <div class="dish-card fade-up" style="transition-delay:0.2s">
+        <div class="dish-img-wrap" style="height:150px;">
+          <img src="assets/images/pizza.png" alt="Stone Oven Pizza" class="dish-img" />
+        </div>
+        <div class="dish-body">
+          <h4 style="font-size:1.1rem; color:var(--text-heading); margin-bottom:6px;">Handcrafted Pizza Dough</h4>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.5;">Slow-fermented artisan pizza base baked fresh upon order with real mozzarella.</p>
+        </div>
+      </div>
+
+      <div class="dish-card fade-up" style="transition-delay:0.3s">
+        <div class="dish-img-wrap" style="height:150px;">
+          <img src="assets/images/menu_pastry.png" alt="Fresh Bakery Treats" class="dish-img" />
+        </div>
+        <div class="dish-body">
+          <h4 style="font-size:1.1rem; color:var(--text-heading); margin-bottom:6px;">Daily Fresh Bakery</h4>
+          <p style="font-size:0.82rem; color:var(--text-muted); line-height:1.5;">Patties, cream rolls, celebration cakes, and traditional sweets made fresh in-house every morning.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── QUOTE & MAKERS SECTION ── -->
+  <section class="section-sm" style="max-width:1300px; margin:0 auto 80px;">
+    <div class="sustainability-banner fade-up" style="background: var(--forest); color: var(--text-inverse); grid-template-columns: 1.2fr 0.8fr;">
+      <div>
+        <p class="serif-italic" style="font-size: clamp(1.4rem, 2.5vw, 2rem); color: var(--text-inverse); line-height: 1.4; margin-bottom: 16px;">
+          "Good food is not just about taste; it is about the care, tradition, and smiles shared across the table."
+        </p>
+        <div style="font-size:0.85rem; color:var(--dew); font-weight:600;">— The Culinary Team at Restro 🌿</div>
+      </div>
+      <div style="text-align: center;">
+        <img src="assets/images/team_makers.png" alt="Team Restro" style="border-radius: var(--radius-md); max-height: 180px; width: 100%; object-fit: cover; border: 2px solid rgba(255,255,255,0.2);" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="footer">
+    <!-- VIP Newsletter Banner -->
+    <div class="footer-vip-bar">
+      <div class="footer-vip-content">
+        <span class="footer-vip-badge">✦ RESTRO VIP CLUB ✦</span>
+        <h3>Get 10% OFF Your Next Feast & Secret Offers!</h3>
+        <p>Subscribe to receive seasonal special menus, festival discount coupons, and event updates.</p>
+      </div>
+      <form class="footer-vip-form" onsubmit="event.preventDefault(); if(this.email.value){ showToast('🎉 Thank you for subscribing to Restro VIP Club!'); this.reset(); }">
+        <input type="email" name="email" class="footer-vip-input" placeholder="Enter your email address..." required />
+        <button type="submit" class="btn-vip-subscribe">Subscribe ✨</button>
+      </form>
+    </div>
+
+    <div class="footer-grid">
+      <!-- Col 1: Brand & Identity -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/images/restro_logo.png" alt="Restro Logo" class="footer-logo-img" />
+          <span class="footer-logo-text">RESTRO</span>
+        </div>
+        <div class="footer-tagline">Authentic Flavors. Crafted for Joyful Moments.</div>
+        <p class="footer-bio">100% Pure vegetarian multi-cuisine dining destination. Paneer curries, dosas, pizzas, noodles & sweets made with pure ingredients.</p>
+        <div class="footer-trust-badges">
+          <span class="trust-badge">🌿 100% Pure Veg</span>
+          <span class="trust-badge">✨ FSSAI Certified</span>
+          <span class="trust-badge">⚡ Fast WhatsApp Order</span>
+        </div>
+        <div class="footer-social-icons">
+          <a href="#" class="social-icon-btn" title="WhatsApp Order" onclick="openCartModal(); return false;">💬</a>
+          <a href="tel:+919876543210" class="social-icon-btn" title="Call Hotline">📞</a>
+          <a href="mailto:contact@restro.com" class="social-icon-btn" title="Email Us">📧</a>
+          <a href="https://maps.google.com" target="_blank" class="social-icon-btn" title="Google Maps">📍</a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Explore</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html"><span>›</span> Home Page</a></li>
+          <li><a href="menu.html"><span>›</span> Full Menu Card (70+ Dishes)</a></li>
+          <li><a href="menu.html#curries"><span>›</span> Signature Paneer Specials</a></li>
+          <li><a href="story.html"><span>›</span> Our Culinary Journey</a></li>
+          <li><a href="visit.html#reservation-form"><span>›</span> Reserve Table Online</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Operating Hours & Live Status -->
+      <div class="footer-section">
+        <h4>Opening Hours</h4>
+        <div class="footer-status-pill">
+          <span class="status-dot-live"></span>
+          <span>Open Now &nbsp;•&nbsp; Dine-In & Delivery</span>
+        </div>
+        <div class="hours-card">
+          <div class="hours-row">
+            <span class="hours-day">Monday – Friday</span>
+            <span class="hours-time">7:00 AM – 11:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Saturday</span>
+            <span class="hours-time">7:00 AM – 11:30 PM</span>
+          </div>
+          <div class="hours-row highlight">
+            <span class="hours-day">Sunday & Holidays</span>
+            <span class="hours-time">7:00 AM – 11:30 PM</span>
+          </div>
+        </div>
+        <p class="hours-note">📍 Kitchen closes 30 mins before closing time.</p>
+      </div>
+
+      <!-- Col 4: Find & Contact Us -->
+      <div class="footer-section">
+        <h4>Find & Contact Us</h4>
+        <div class="contact-info-block">
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <strong>Restro Restaurant</strong>
+              <p>Main Road, City Center (Opp. Town Hall)</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div>
+              <strong>Order Hotline</strong>
+              <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <strong>Email Support</strong>
+              <p><a href="mailto:contact@restro.com">contact@restro.com</a></p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 14px;">
+          <a href="https://maps.google.com" target="_blank" class="btn-footer-maps">📍 Open in Google Maps →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <p>🌿 &copy; 2026 Restro. All rights reserved. 100% Pure Vegetarian Dining.</p>
+        <span class="fssai-tag">FSSAI Lic No. 10026099000142</span>
+      </div>
+      <div class="footer-bottom-right">
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Refund Policy</a>
+        </div>
+        <button type="button" class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top">
+          <span>Back to top</span> ↑
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

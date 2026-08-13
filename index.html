@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Restro — 100% Pure Veg Fine Dining, Table Booking & Takeaway</title>
+  <meta name="description" content="Restro — Exquisite pure veg dining with rich curries, stone-baked pizzas, crispy dosas, Chinese delights, and traditional sweets. Order via WhatsApp or book a table." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-left">
+      <div class="nav-logo" onclick="window.location.href='index.html'">
+        <img src="assets/images/restro_logo.png" alt="Restro Logo" class="nav-logo-img" />
+        <span class="nav-logo-text">RESTRO</span>
+      </div>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="index.html" class="active" id="nav-home">Home</a></li>
+      <li><a href="menu.html" id="nav-menu">Menu Card</a></li>
+      <li><a href="menu.html#curries" id="nav-specialties">Specialties</a></li>
+      <li><a href="story.html" id="nav-story">Our Story</a></li>
+      <li><a href="visit.html" id="nav-visit">Visit & Book</a></li>
+    </ul>
+
+    <div class="nav-right-actions">
+      <!-- Theme Switcher (Dark Luxury Mode) -->
+      <button class="theme-toggle-btn" aria-label="Toggle Dark Mode">🌙</button>
+
+      <a href="visit.html#reservation-form" class="btn-primary" style="padding:10px 22px; font-size:0.85rem;" id="btn-reserve-nav">Reserve Table →</a>
+
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── MOBILE DRAWER ── -->
+  <div class="mobile-drawer-overlay" id="mobileOverlay"></div>
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-links">
+      <div style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--moss); font-weight:700; margin-bottom:12px;">Navigation</div>
+      <a href="index.html">Home <span>→</span></a>
+      <a href="menu.html">Full Menu Card (70+ Dishes) <span>→</span></a>
+      <a href="menu.html#curries">Chef's Specialties <span>→</span></a>
+      <a href="story.html">Our Story <span>→</span></a>
+      <a href="visit.html">Visit & Reservations <span>→</span></a>
+    </div>
+    <div style="display:flex; flex-direction:column; gap:10px;">
+      <a href="https://wa.me/919876543210?text=Hello%20Restro%2C%20I%20want%20to%20order" target="_blank" class="btn-whatsapp" style="width:100%; text-decoration:none;">
+        💬 Order on WhatsApp
+      </a>
+      <a href="visit.html#reservation-form" class="btn-primary" style="width:100%;">Book a Table ✦</a>
+      <p style="font-size:0.75rem; color:var(--text-muted); text-align:center; margin-top:8px;">100% Pure Vegetarian Dining</p>
+    </div>
+  </div>
+
+  <!-- ── HERO SECTION ── -->
+  <section class="hero" id="home">
+    <div class="hero-bg-blob"></div>
+
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <div class="hero-eyebrow-line"></div>
+        <span class="label-sm">✦ Pure Veg Dining & Takeaway ✦</span>
+      </div>
+
+      <h1 class="hero-title">
+        Authentic<br>
+        Flavors, Crafted<br>
+        with <em>Passion.</em><span class="hero-leaf">🌿</span>
+      </h1>
+
+      <div class="hero-divider"></div>
+
+      <p class="hero-desc">
+        From sizzling Paneer Butter Masala and crispy dosas to handcrafted stone-fired pizzas, noodles, and royal thalis — taste true culinary perfection at Restro.
+      </p>
+
+      <div class="hero-actions">
+        <a href="menu.html" class="btn-primary" id="btn-explore-menu">Explore Full Menu (70+ Items) →</a>
+        <a href="https://wa.me/919876543210?text=Hello%20Restro%2C%20I%20want%20to%20place%20an%20order" target="_blank" class="btn-whatsapp" id="btn-order-wa" style="text-decoration:none;">💬 Instant WhatsApp Order</a>
+      </div>
+
+      <div class="hero-feature-card fade-up" onclick="window.location.href='menu.html'">
+        <img src="assets/images/paneer_butter_masala.png" alt="Paneer Butter Masala" class="hero-feature-card-img" />
+        <div>
+          <div style="display:flex; align-items:center; gap:6px; margin-bottom:2px;">
+            <span class="veg-badge"></span>
+            <h4>Paneer Butter Masala</h4>
+          </div>
+          <p>Melt-in-mouth cottage cheese in rich makhani gravy.</p>
+          <div class="hero-feature-link">View Dish Details ↗</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image-col">
+      <img src="assets/images/hero_food.png" alt="Restro Feast" class="hero-main-img" />
+    </div>
+  </section>
+
+  <!-- ── CURATED EXPERIENCES & DINING PRIVILEGES (REDESIGNED) ── -->
+  <section class="curated-experiences-section" id="curated-privileges">
+    <div style="text-align:center;">
+      <div class="section-label label-sm">✦ Curated Experiences ✦</div>
+      <h2 class="section-title">Seasonal Privileges & Tastings</h2>
+      <p class="section-subtitle">Thoughtful culinary offerings crafted to elevate your dining journey, whether at our tables or in your home.</p>
+    </div>
+
+    <div class="experience-cards-grid">
+      <!-- Privilege Card 1 -->
+      <div class="curated-card fade-up">
+        <div>
+          <div class="curated-card-badge">✦ First Dining Experience ✦</div>
+          <h3>Welcome Tasting Privilege</h3>
+          <p>Receive an introductory 10% privilege across our complete pure vegetarian a la carte menu on your initial order.</p>
+        </div>
+        <div class="privilege-action-row">
+          <span class="privilege-code-pill">FIRST10</span>
+          <div class="btn-claim-privilege" onclick="applyCouponCode('FIRST10')">
+            Apply Privilege →
+          </div>
+        </div>
+      </div>
+
+      <!-- Privilege Card 2 -->
+      <div class="curated-card fade-up" style="transition-delay:0.1s;">
+        <div>
+          <div class="curated-card-badge">✦ Royal Banquets & Families ✦</div>
+          <h3>The Maharaja Family Feast</h3>
+          <p>A lavish banquet spread of rich paneer curries, slow-cooked dals, hot butter rotis, and sweets with 20% celebratory savings.</p>
+        </div>
+        <div class="privilege-action-row">
+          <span class="privilege-code-pill">MAHARAJA20</span>
+          <div class="btn-claim-privilege" onclick="applyCouponCode('MAHARAJA20')">
+            Apply Privilege →
+          </div>
+        </div>
+      </div>
+
+      <!-- Privilege Card 3 -->
+      <div class="curated-card fade-up" style="transition-delay:0.2s;">
+        <div>
+          <div class="curated-card-badge">✦ Evening Street & Bites ✦</div>
+          <h3>Artisan Evening Platter</h3>
+          <p>Enjoy flat ₹50 savings on freshly wok-tossed chowmein, kurkure momos, and stone-baked artisan pizzas above ₹200.</p>
+        </div>
+        <div class="privilege-action-row">
+          <span class="privilege-code-pill">FLAT50</span>
+          <div class="btn-claim-privilege" onclick="applyCouponCode('FLAT50')">
+            Apply Privilege →
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CHEF'S SPECIAL FEAST WIDE BANNER (CINDER & DEW STYLE) ── -->
+  <section style="padding: 0 48px; max-width:1400px; margin:0 auto;">
+    <div class="chef-highlight-banner fade-up">
+      <div class="chef-highlight-content">
+        <div class="label-sm" style="color:var(--gold); margin-bottom:8px;">✦ CHEF'S SIGNATURE SPREAD ✦</div>
+        <h2 class="chef-highlight-title">Maharaja Royal Thali Feast</h2>
+        <p class="chef-highlight-desc">
+          An opulent, multi-course pure vegetarian tasting experience: 4 Hot Butter Tawa Rotis, Fragrant Shahi Jeera Rice, Velvety Paneer Butter Masala, Dhaba Dal Fry, Kesar Gulab Jamun, Fresh Curd Raita, Garden Salad & Roasted Papad.
+        </p>
+        <div class="chef-highlight-price-row">
+          <div class="chef-highlight-price">₹120 <span style="font-size:0.85rem; font-weight:400; opacity:0.8; color:var(--text-inverse);">/ Complete Feast</span></div>
+        </div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="https://wa.me/919876543210?text=Hello%20Restro%2C%20I%20want%20to%20order%20Maharaja%20Royal%20Thali%20Feast" target="_blank" class="btn-whatsapp" style="text-decoration:none;">
+            💬 Order Thali on WhatsApp
+          </a>
+          <a href="visit.html#reservation-form" class="btn-secondary" style="color:var(--text-inverse); border-color:rgba(255,255,255,0.4);">
+            Reserve Table for Dine-In →
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <img src="assets/images/hero_food.png" alt="GS Maharaja Thali Feast" class="chef-highlight-img" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── POPULAR SIGNATURE DISHES ── -->
+  <section class="signature-section" id="signature" style="padding-top:20px;">
+    <div class="section-label label-sm">✦ Handcrafted Classics ✦</div>
+    <h2 class="section-title">Crafted for the Season</h2>
+    <p class="section-subtitle">A selection of our most cherished dishes, prepared fresh with unhurried devotion and pure ingredients.</p>
+
+    <div class="menu-section-container" style="padding-top:0;">
+      <div class="dish-grid">
+        <!-- 1. Paneer Butter Masala -->
+        <div class="dish-card fade-up">
+          <div class="dish-img-wrap" onclick="openDishModal('paneer-butter-masala')">
+            <img src="assets/images/paneer_butter_masala.png" alt="Paneer Butter Masala" class="dish-img" />
+            <div class="dish-top-badges">
+              <span class="veg-badge"></span>
+              <span class="dish-tag">Bestseller</span>
+            </div>
+          </div>
+          <div class="dish-body">
+            <div class="dish-header" onclick="openDishModal('paneer-butter-masala')">
+              <h3 class="dish-title">Paneer Butter Masala</h3>
+            </div>
+            <p class="dish-desc">Velvety cashew-tomato makhani gravy enriched with fresh dairy cream and malai paneer.</p>
+            <div class="dish-pricing-area">
+              <div class="dish-footer-row" onclick="openDishModal('paneer-butter-masala')">
+                <div class="dish-price"><span class="dish-price-prefix">₹</span>109 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">/ Half</span></div>
+              </div>
+              <button type="button" class="btn-view-detail" onclick="openDishModal('paneer-butter-masala')">
+                <span>👁️ View Details</span> <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Masala Dosa -->
+        <div class="dish-card fade-up" style="transition-delay:0.1s">
+          <div class="dish-img-wrap" onclick="openDishModal('masala-dosa')">
+            <img src="assets/images/masala_dosa.png" alt="Masala Dosa" class="dish-img" />
+            <div class="dish-top-badges">
+              <span class="veg-badge"></span>
+              <span class="dish-tag">Crispy</span>
+            </div>
+          </div>
+          <div class="dish-body">
+            <div class="dish-header" onclick="openDishModal('masala-dosa')">
+              <h3 class="dish-title">Signature Masala Dosa</h3>
+            </div>
+            <p class="dish-desc">Paper-thin golden crepe filled with fragrant spiced potato mash, served with sambar and chutneys.</p>
+            <div class="dish-pricing-area">
+              <div class="dish-footer-row" onclick="openDishModal('masala-dosa')">
+                <div class="dish-price"><span class="dish-price-prefix">₹</span>69 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">/ Plate</span></div>
+              </div>
+              <button type="button" class="btn-view-detail" onclick="openDishModal('masala-dosa')">
+                <span>👁️ View Details</span> <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Paneer Tikka Pizza -->
+        <div class="dish-card fade-up" style="transition-delay:0.2s">
+          <div class="dish-img-wrap" onclick="openDishModal('paneer-pizza')">
+            <img src="assets/images/pizza.png" alt="Paneer Pizza" class="dish-img" />
+            <div class="dish-top-badges">
+              <span class="veg-badge"></span>
+              <span class="dish-tag">Cheesy Burst</span>
+            </div>
+          </div>
+          <div class="dish-body">
+            <div class="dish-header" onclick="openDishModal('paneer-pizza')">
+              <h3 class="dish-title">Spiced Paneer Pizza</h3>
+            </div>
+            <p class="dish-desc">Tandoori-spiced paneer cubes, bell peppers, and bubbling mozzarella baked over stone crust.</p>
+            <div class="dish-pricing-area">
+              <div class="dish-footer-row" onclick="openDishModal('paneer-pizza')">
+                <div class="dish-price"><span class="dish-price-prefix">₹</span>199 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">/ Pie</span></div>
+              </div>
+              <button type="button" class="btn-view-detail" onclick="openDishModal('paneer-pizza')">
+                <span>👁️ View Details</span> <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Kesar Pista Rasmalai -->
+        <div class="dish-card fade-up" style="transition-delay:0.3s">
+          <div class="dish-img-wrap" onclick="openDishModal('rasmalai')">
+            <img src="assets/images/menu_pastry.png" alt="Kesar Rasmalai" class="dish-img" />
+            <div class="dish-top-badges">
+              <span class="veg-badge"></span>
+              <span class="dish-tag">Royal Dessert</span>
+            </div>
+          </div>
+          <div class="dish-body">
+            <div class="dish-header" onclick="openDishModal('rasmalai')">
+              <h3 class="dish-title">Kesar Pista Rasmalai</h3>
+            </div>
+            <p class="dish-desc">Melt-in-mouth cottage cheese discs immersed in thickened saffron rabdi with slivered pistachios.</p>
+            <div class="dish-pricing-area">
+              <div class="dish-footer-row" onclick="openDishModal('rasmalai')">
+                <div class="dish-price"><span class="dish-price-prefix">₹</span>40 <span style="font-size:0.75rem; color:var(--text-muted); font-weight:400;">/ pc</span></div>
+              </div>
+              <button type="button" class="btn-view-detail" onclick="openDishModal('rasmalai')">
+                <span>👁️ View Details</span> <span>→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:40px;">
+        <a href="menu.html" class="btn-primary" style="padding:14px 36px; font-size:1rem;">View All 70+ Dishes on Menu Card →</a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ── CUSTOMER REVIEWS & RATINGS ── -->
+  <section class="reviews-section" id="reviews">
+    <div style="text-align:center;">
+      <div class="rating-summary-badge">
+        <span class="star-stars">⭐⭐⭐⭐⭐</span> 4.9 / 5.0 Rating (1,450+ Happy Guests)
+      </div>
+      <h2 class="section-title">What Our Guests Say</h2>
+      <p class="section-subtitle">Real feedback from families, food lovers, and travelers who dine at Restro.</p>
+    </div>
+
+    <div class="reviews-carousel-track">
+      <div class="review-card fade-up">
+        <p class="review-quote">"The Paneer Butter Masala and Butter Naan here are simply out of this world! Pure vegetarian bliss with genuine high hygiene standards."</p>
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">RK</div>
+          <div class="reviewer-meta">
+            <h5>Rajesh Kumar</h5>
+            <span>Dined with Family • ⭐⭐⭐⭐⭐</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card fade-up" style="transition-delay:0.1s;">
+        <p class="review-quote">"Ordered the Spiced Paneer Pizza and Masala Dosa via WhatsApp. Super fast delivery and the food was sizzling hot and delicious!"</p>
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">PS</div>
+          <div class="reviewer-meta">
+            <h5>Pooja Sharma</h5>
+            <span>WhatsApp Takeaway • ⭐⭐⭐⭐⭐</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card fade-up" style="transition-delay:0.2s;">
+        <p class="review-quote">"Hosted my daughter's birthday with their Maharaja Thali catering package for 40 guests. Everyone loved the Rasmalai and Biryani!"</p>
+        <div class="reviewer-info">
+          <div class="reviewer-avatar">AV</div>
+          <div class="reviewer-meta">
+            <h5>Amit Verma</h5>
+            <span>Party Catering Host • ⭐⭐⭐⭐⭐</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── LOCATION & LIVE GOOGLE MAP ── -->
+  <section class="section" id="location" style="max-width:1300px; margin:0 auto; padding-bottom:60px;">
+    <div style="text-align:center; margin-bottom:24px;">
+      <div class="label-sm">✦ Visit Our Restaurant ✦</div>
+      <h2 class="section-title" style="margin-top:6px;">Find Us on Google Maps</h2>
+      <p style="font-size:0.9rem; color:var(--text-muted);">Conveniently located with spacious dining and valet parking facilities.</p>
+    </div>
+
+    <div class="map-embed-wrapper fade-up">
+      <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d120638.11899144865!2d72.8258334!3d19.0821978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <div style="text-align:center;">
+      <a href="https://maps.google.com" target="_blank" class="btn-secondary" style="padding:10px 24px;">📍 Open in Google Maps for Turn-by-Turn Navigation →</a>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="footer">
+    <!-- VIP Newsletter Banner -->
+    <div class="footer-vip-bar">
+      <div class="footer-vip-content">
+        <span class="footer-vip-badge">✦ RESTRO VIP CLUB ✦</span>
+        <h3>Get 10% OFF Your Next Feast & Secret Offers!</h3>
+        <p>Subscribe to receive seasonal special menus, festival discount coupons, and event updates.</p>
+      </div>
+      <form class="footer-vip-form" onsubmit="event.preventDefault(); if(this.email.value){ showToast('🎉 Thank you for subscribing to Restro VIP Club!'); this.reset(); }">
+        <input type="email" name="email" class="footer-vip-input" placeholder="Enter your email address..." required />
+        <button type="submit" class="btn-vip-subscribe">Subscribe ✨</button>
+      </form>
+    </div>
+
+    <div class="footer-grid">
+      <!-- Col 1: Brand & Identity -->
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <img src="assets/images/restro_logo.png" alt="Restro Logo" class="footer-logo-img" />
+          <span class="footer-logo-text">RESTRO</span>
+        </div>
+        <div class="footer-tagline">Authentic Flavors. Crafted for Joyful Moments.</div>
+        <p class="footer-bio">100% Pure vegetarian multi-cuisine dining destination. Paneer curries, dosas, pizzas, noodles & sweets made with pure ingredients.</p>
+        <div class="footer-trust-badges">
+          <span class="trust-badge">🌿 100% Pure Veg</span>
+          <span class="trust-badge">✨ FSSAI Certified</span>
+          <span class="trust-badge">⚡ Fast WhatsApp Order</span>
+        </div>
+        <div class="footer-social-icons">
+          <a href="#" class="social-icon-btn" title="WhatsApp Order" onclick="openCartModal(); return false;">💬</a>
+          <a href="tel:+919876543210" class="social-icon-btn" title="Call Hotline">📞</a>
+          <a href="mailto:contact@restro.com" class="social-icon-btn" title="Email Us">📧</a>
+          <a href="https://maps.google.com" target="_blank" class="social-icon-btn" title="Google Maps">📍</a>
+        </div>
+      </div>
+
+      <!-- Col 2: Quick Links -->
+      <div class="footer-section">
+        <h4>Quick Explore</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html"><span>›</span> Home Page</a></li>
+          <li><a href="menu.html"><span>›</span> Full Menu Card (70+ Dishes)</a></li>
+          <li><a href="menu.html#curries"><span>›</span> Signature Paneer Specials</a></li>
+          <li><a href="story.html"><span>›</span> Our Culinary Journey</a></li>
+          <li><a href="visit.html#reservation-form"><span>›</span> Reserve Table Online</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Operating Hours & Live Status -->
+      <div class="footer-section">
+        <h4>Opening Hours</h4>
+        <div class="footer-status-pill">
+          <span class="status-dot-live"></span>
+          <span>Open Now &nbsp;•&nbsp; Dine-In & Delivery</span>
+        </div>
+        <div class="hours-card">
+          <div class="hours-row">
+            <span class="hours-day">Monday – Friday</span>
+            <span class="hours-time">7:00 AM – 11:00 PM</span>
+          </div>
+          <div class="hours-row">
+            <span class="hours-day">Saturday</span>
+            <span class="hours-time">7:00 AM – 11:30 PM</span>
+          </div>
+          <div class="hours-row highlight">
+            <span class="hours-day">Sunday & Holidays</span>
+            <span class="hours-time">7:00 AM – 11:30 PM</span>
+          </div>
+        </div>
+        <p class="hours-note">📍 Kitchen closes 30 mins before closing time.</p>
+      </div>
+
+      <!-- Col 4: Find & Contact Us -->
+      <div class="footer-section">
+        <h4>Find & Contact Us</h4>
+        <div class="contact-info-block">
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <strong>Restro Restaurant</strong>
+              <p>Main Road, City Center (Opp. Town Hall)</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div>
+              <strong>Order Hotline</strong>
+              <p><a href="tel:+919876543210">+91 98765 43210</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📧</span>
+            <div>
+              <strong>Email Support</strong>
+              <p><a href="mailto:contact@restro.com">contact@restro.com</a></p>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top: 14px;">
+          <a href="https://maps.google.com" target="_blank" class="btn-footer-maps">📍 Open in Google Maps →</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-left">
+        <p>🌿 &copy; 2026 Restro. All rights reserved. 100% Pure Vegetarian Dining.</p>
+        <span class="fssai-tag">FSSAI Lic No. 10026099000142</span>
+      </div>
+      <div class="footer-bottom-right">
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Refund Policy</a>
+        </div>
+        <button type="button" class="back-to-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Back to Top">
+          <span>Back to top</span> ↑
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
