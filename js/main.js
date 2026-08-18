@@ -157,8 +157,9 @@ const MENU_DATA = [
 let activeCategory = "all";
 let searchQuery = "";
 let cartItems = {};
+let selectedPortions = {};
 // ── INIT ON DOM READY ──
-document.addEventListener("DOMContentLoaded", () => {
+function initApp() {
   initTheme();
   initNavbar();
   initMobileDrawer();
@@ -167,7 +168,13 @@ document.addEventListener("DOMContentLoaded", () => {
   initDishModal();
   initReservationForm();
   initCouponCopyButtons();
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initApp);
+} else {
+  initApp();
+}
 
 // ── 2. THEME SWITCHER LOGIC (DARK LUXURY MODE) ──
 function initTheme() {
@@ -239,6 +246,24 @@ function initMenuRenderer() {
   const searchInput = document.getElementById("menuSearchInput");
   const searchClear = document.getElementById("searchClearBtn");
   const pillTabs = document.querySelectorAll(".pill-tab");
+
+  function syncCategoryFromHash() {
+    const hash = window.location.hash.replace("#", "").trim();
+    if (hash) {
+      const matchingPill = Array.from(pillTabs).find(p => p.dataset.category === hash);
+      if (matchingPill) {
+        pillTabs.forEach(p => p.classList.remove("active"));
+        matchingPill.classList.add("active");
+        activeCategory = hash;
+      }
+    }
+  }
+
+  syncCategoryFromHash();
+  window.addEventListener("hashchange", () => {
+    syncCategoryFromHash();
+    renderFilteredDishes();
+  });
 
   if (searchInput) {
     searchInput.addEventListener("input", (e) => {
